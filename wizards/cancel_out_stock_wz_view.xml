@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="sag_cancel_out_stock_wz" model="ir.ui.view">    
+        <field name="name">sag.cancel_out_stock_wz.view</field>
+        <field name="model">sag.cancel_out_stock_wz</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>                    
+                </header>
+                <sheet>
+                    <h3>Cancelar productos sin stock</h3>
+                    <p>¿Poner en 0 las cantidades pedidas de los productos que no tienen stock y anular esos productos en la entrega?</p>
+                </sheet>
+                <footer>
+                    <button class="btn-primary" string="Aceptar"  name="cancelar_sin_stock" type="object"/>
+                    <button class="btn-primary" string="Cancelar" special="cancel"/>
+                </footer>
+            </form>              
+        </field>    
+    </record>
+
+    <record id="action_open_cancel_out_stock_wz" model="ir.actions.act_window">
+        <field name="name">Cancelar sin stock</field>
+        <field name="res_model">sag.cancel_out_stock_wz</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

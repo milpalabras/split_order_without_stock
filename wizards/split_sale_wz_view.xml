@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="sag_split_sale_wz_view_form" model="ir.ui.view">    
+        <field name="name">sag.split_sale_wz.view.form</field>
+        <field name="model">sag.split_sale_wz</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                    <button class="btn-primary" string="ver productos sin stock"  name="ver_productos_sin_stock" type="object" />
+                </header>
+                <sheet>
+                    <h3>Productos sin stock</h3>
+                    <field name="split_sale_line_ids">
+                        <tree>
+                            
+                            <field name="product_id" readonly="1" attrs="{'invisible':[('falta_stock','=','False')]}"/>
+                            <field name="product_uom_qty" readonly="1" attrs="{'invisible':[('falta_stock','=','False')]}"/>
+                            <field name="product_packaging_qty" readonly="1" attrs="{'invisible':[('falta_stock','=','False')]}"/>
+                            <field name="falta_stock" readonly="1" attrs="{'invisible':[('falta_stock','=','False')]}"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    
+                    <button class="oe_highlight" string="Separar pendientes"  name="confirmar_separar_pendientes" type="object" />
+                    <button class="btn-primary" string="Cancelar" special="cancel"/>
+                </footer>
+            </form>              
+        </field>    
+    </record>
+
+    <record id="action_open_split_sale_wz_sag" model="ir.actions.act_window">
+        <field name="name">Separar Pendientes</field>
+        <field name="res_model">sag.split_sale_wz</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

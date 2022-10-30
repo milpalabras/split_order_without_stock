@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sag_split_sale_wz,acceso_sag_split_sale_wz,model_sag_split_sale_wz,base.group_user,1,1,1,1
+access_sag_split_sale_wz_line,acceso_sag_split_sale_wz_line,model_sag_split_sale_wz_line,base.group_user,1,1,1,1
+access_sag_cancel_out_stock_wz,acceso_sag_cancel_out_stock_wz,model_sag_cancel_out_stock_wz,base.group_user,1,1,1,1
+
+
+

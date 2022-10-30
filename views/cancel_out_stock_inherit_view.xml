@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="sag_cancel_out_stock_inherit_form">
+        <field name="name">sale.order.inherit.form.cancel_out_stock.order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//header//button[@name='action_draft']" position="after">
+                <field name="operacion" invisible="1" />
+                <field name="previsional" invisible="1" />
+                <button string="Cancelar sin stock" name="%(action_open_cancel_out_stock_wz)d" type="action"  attrs="{'invisible':[('operacion','=','si'),('previsional','=','realizado')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

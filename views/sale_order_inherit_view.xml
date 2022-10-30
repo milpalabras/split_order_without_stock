@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="sag_sale_order_inherit_form_ati_split">
+        <field name="name">sale.order.inherit.form.split.order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//header//button[@name='action_draft']" position="after">
+                <field name="operacion" invisible="1" />
+                <field name="previsional" invisible="1" />
+                <button string="Separar Pendientes" name="%(action_open_split_sale_wz_sag)d" type="action"  attrs="{'invisible':[('operacion','=','si'),('previsional','=','realizado')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
